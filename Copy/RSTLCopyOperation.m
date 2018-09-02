@@ -130,11 +130,11 @@ static int RSTLCopyFileCallback(int what, int stage, copyfile_state_t state, con
     //return COPYFILE_QUIT;
 }
 
-- (int)flags
+- (copyfile_flags_t)flags
 {
     // TODO: Figure out why COPYFILE_EXCL doesn't work for directories
     // Probably need to do something in the callback
-    int flags = COPYFILE_ALL|COPYFILE_NOFOLLOW|COPYFILE_EXCL;
+    copyfile_flags_t flags = COPYFILE_ALL|COPYFILE_NOFOLLOW|COPYFILE_EXCL|COPYFILE_CLONE;
     BOOL isDir;
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.fromPath isDirectory:&isDir] && isDir)
     {

@@ -66,4 +66,5 @@ typedef NS_ENUM(int8_t, RSTLCopyState) {
 @optional
 - (void)copyOperationWillStart:(RSTLCopyOperation *)copyOperation;
 - (void)copyOperationDidFinish:(RSTLCopyOperation *)copyOperation;
+- (void)copyOperation:(RSTLCopyOperation *)copyOperation encounteredError:(NSError*)error;
 @end
